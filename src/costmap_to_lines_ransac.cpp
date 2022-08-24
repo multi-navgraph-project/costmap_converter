@@ -142,15 +142,14 @@ void CostmapToLinesDBSRANSAC::compute()
     }
     
     // add our non-cluster points to the polygon container (as single points)
-    if (!clusters.empty())
-    {
-      for (int i=0; i < clusters.front().size(); ++i)
-      {
-        polygons->push_back( geometry_msgs::Polygon() );
-        convertPointToPolygon(clusters.front()[i], polygons->back());
-      }
-    }
-        
+    // if (!clusters.empty())
+    // {
+    //   for (int i=0; i < clusters.front().size(); ++i)
+    //   {
+    //     polygons->push_back( geometry_msgs::Polygon() );
+    //     convertPointToPolygon(clusters.front()[i], polygons->back());
+    //   }
+    // }
     // replace shared polygon container
     updatePolygonContainer(polygons);
 }
