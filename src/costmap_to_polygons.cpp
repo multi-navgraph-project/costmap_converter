@@ -153,14 +153,14 @@ void CostmapToPolygonsDBSMCCH::compute()
     }
     
     // add our non-cluster points to the polygon container (as single points)
-    if (!clusters.empty())
-    {
-      for (std::size_t i=0; i < clusters.front().size(); ++i)
-      {
-        polygons->push_back( geometry_msgs::Polygon() );
-        convertPointToPolygon(clusters.front()[i], polygons->back());
-      }
-    }
+    // if (!clusters.empty())
+    // {
+    //   for (std::size_t i=0; i < clusters.front().size(); ++i)
+    //   {
+    //     polygons->push_back( geometry_msgs::Polygon() );
+    //     convertPointToPolygon(clusters.front()[i], polygons->back());
+    //   }
+    // }
     
     // replace shared polygon container
     updatePolygonContainer(polygons);
